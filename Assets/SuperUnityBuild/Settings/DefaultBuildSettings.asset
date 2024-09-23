@@ -1,5 +1,28 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-1479903178982987647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54626104f6c7de94f9976e1672abc45b, type: 3}
+  m_Name: FolderOperation
+  m_EditorClassIdentifier: 
+  actionType: 1
+  actionName: FolderOperation
+  note: Separate BurstDebugInformation
+  actionEnabled: 1
+  configureEditor: 0
+  filter:
+    condition: 0
+    clauses: []
+  inputPath: $BUILDPATH/$PRODUCT_NAME_BurstDebugInformation_DoNotShip
+  outputPath: $BASEPATH/DoNotShip/$VERSION-$ARCHITECTURE-BurstDebugInformation
+  operation: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18,8 +41,8 @@ MonoBehaviour:
     openFolderPostBuild: 1
     constantsFileLocation: Assets/SuperUnityBuild
   _productParameters:
-    buildCounter: 2
-    buildVersion: 2024-09-22-4723
+    buildCounter: 3
+    buildVersion: 2024-09-22-4993
     versionTemplate: $YEAR-$MONTH-$DAY-$SECONDS
     autoGenerate: 1
     syncWithPlayerSettings: 0
@@ -70,7 +93,7 @@ MonoBehaviour:
       - 
       - 
       _Values:
-      - enabled: 1
+      - enabled: 0
         childKeys: []
       - enabled: 1
         childKeys:
@@ -78,7 +101,7 @@ MonoBehaviour:
       - enabled: 1
         childKeys:
         - DefaultRelease/WebGL/WebGL
-      - enabled: 1
+      - enabled: 0
         childKeys: []
       - enabled: 1
         childKeys:
@@ -123,36 +146,8 @@ MonoBehaviour:
     buildActions: []
   _postBuildActions:
     buildActions:
-    - {fileID: 4717614677423472097}
-    - {fileID: 2547842694193250678}
-    - {fileID: 7690906448435525241}
---- !u!114 &2547842694193250678
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 97d88f7d353534a4fbdeb11196057db7, type: 3}
-  m_Name: UploadItch
-  m_EditorClassIdentifier: 
-  actionType: 1
-  actionName: UploadItch
-  note: from Windows
-  actionEnabled: 0
-  configureEditor: 0
-  filter:
-    condition: 0
-    clauses: []
-  pathToButlerExe: Assets/BuildHelpers/Butler/butler-windows-amd64/butler.exe
-  nameOfItchUser: <USER_NAME>
-  nameOfItchGame: <GAME_NAME>
-  useGeneratedBuildVersion: 1
-  channelName: $PLATFORM-$ARCHITECTURE
-  showUploadProgress: 1
-  itchChannelOverride: 
+    - {fileID: -1479903178982987647}
+    - {fileID: 5856458712259115522}
 --- !u!114 &4007342730805565810
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -193,7 +188,7 @@ MonoBehaviour:
     enabled: 0
   platformName: PC
   targetGroup: 1
---- !u!114 &4717614677423472097
+--- !u!114 &5856458712259115522
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -202,21 +197,26 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86e19aa5315bf4a409c07e84ca8c4248, type: 3}
-  m_Name: FileOperation
+  m_Script: {fileID: 11500000, guid: 15b7985b2ca7b4b99a5bc7773881b87a, type: 3}
+  m_Name: BetterUploadItch
   m_EditorClassIdentifier: 
   actionType: 1
-  actionName: FileOperation
+  actionName: BetterUploadItch
   note: 
-  actionEnabled: 0
+  actionEnabled: 1
   configureEditor: 0
   filter:
     condition: 0
     clauses: []
-  inputPath: 
-  outputPath: 
-  recursiveSearch: 1
-  operation: 0
+  pathToButlerExe: Assets/BuildHelpers/Butler/butler-windows-amd64/butler.exe
+  pathToButlerApp: Assets/BuildHelpers/Butler/butler-darwin-amd64/butler
+  willPublishToItch: 0
+  nameOfItchUser: <USER_NAME>
+  nameOfItchGame: <GAME_NAME>
+  useGeneratedBuildVersion: 0
+  channelName: $PLATFORM-$ARCHITECTURE
+  showUploadProgress: 1
+  itchChannelOverride: 
 --- !u!114 &7195266676638434531
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -287,30 +287,3 @@ MonoBehaviour:
     enabled: 0
   platformName: macOS
   targetGroup: 1
---- !u!114 &7690906448435525241
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 97d88f7d353534a4fbdeb11196057db7, type: 3}
-  m_Name: UploadItch
-  m_EditorClassIdentifier: 
-  actionType: 1
-  actionName: UploadItch
-  note: from MacOS
-  actionEnabled: 0
-  configureEditor: 0
-  filter:
-    condition: 0
-    clauses: []
-  pathToButlerExe: Assets/BuildHelpers/Butler/butler-darwin-amd64/butler
-  nameOfItchUser: <USER_NAME>
-  nameOfItchGame: <GAME_NAME>
-  useGeneratedBuildVersion: 1
-  channelName: $PLATFORM-$ARCHITECTURE
-  showUploadProgress: 1
-  itchChannelOverride: 
