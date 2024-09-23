@@ -14,19 +14,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _basicSettings:
     baseBuildFolder: Builds
-    buildPath: $VERSION/$RELEASE_TYPE/$PLATFORM/$ARCHITECTURE/$SCRIPTING_BACKEND
+    buildPath: $VERSION/$RELEASE_TYPE-$PLATFORM-$ARCHITECTURE-$SCRIPTING_BACKEND
     openFolderPostBuild: 1
     constantsFileLocation: Assets/SuperUnityBuild
   _productParameters:
-    buildCounter: 0
-    buildVersion: 
-    versionTemplate: 0.$BUILD.0
+    buildCounter: 2
+    buildVersion: 2024-09-22-4723
+    versionTemplate: $YEAR-$MONTH-$DAY-$SECONDS
     autoGenerate: 1
     syncWithPlayerSettings: 0
   _releaseTypeList:
     releaseTypes:
     - typeName: DefaultRelease
-      bundleIdentifier: com.Unity-Technologies.com.unity.template.urp-blank
+      bundleIdentifier: com.BlueSquareLegion.TEMPLATE
       companyName: BlueSquareLegion
       productName: TEMPLATE
       syncAppNameWithProduct: 1
@@ -34,7 +34,9 @@ MonoBehaviour:
       buildOptions: 0
       customDefines: 
       sceneList:
-        releaseScenes: []
+        releaseScenes:
+        - fileGUID: 99c9720ab356a0642a771bea13969a05
+          sceneActive: 1
   _platformList:
     platforms:
     - {fileID: 7195266676638434531}
@@ -76,7 +78,7 @@ MonoBehaviour:
       - enabled: 1
         childKeys:
         - DefaultRelease/WebGL/WebGL
-      - enabled: 0
+      - enabled: 1
         childKeys: []
       - enabled: 1
         childKeys:
@@ -84,7 +86,7 @@ MonoBehaviour:
       - enabled: 1
         childKeys:
         - DefaultRelease/PC/Windows x64 (App)
-      - enabled: 0
+      - enabled: 1
         childKeys: []
       - enabled: 1
         childKeys:
@@ -116,7 +118,7 @@ MonoBehaviour:
     showBuildInfo: 0
     hideDisabled: 0
     treeView: 0
-    selectedKeyChain: 
+    selectedKeyChain: DefaultRelease/WebGL/WebGL/IL2CPP
   _preBuildActions:
     buildActions: []
   _postBuildActions:
@@ -206,7 +208,7 @@ MonoBehaviour:
   actionType: 1
   actionName: FileOperation
   note: 
-  actionEnabled: 1
+  actionEnabled: 0
   configureEditor: 0
   filter:
     condition: 0
