@@ -1,2 +1,5 @@
 # P1-Unity-Template
-Opinionated Unity template for easy development
+Semi-opinionated Unity template for easy development for P1 Sprint Cycles.
+
+## License
+See the [LICENSE file](./LICENSE).
